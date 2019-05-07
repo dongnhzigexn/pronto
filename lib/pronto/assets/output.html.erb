@@ -30,6 +30,10 @@
     header {
       margin-bottom: 20px;
     }
+
+    body {
+      font-size: 0.75rem !important;
+    }
   </style>
 </head>
 
@@ -64,7 +68,7 @@
     </div>
 
     <% files.each do |path, offenses| %>
-      <details class="card mt-2 accordion" id="offense_<%= path %>" open>
+      <details class="card mt-2 accordion" id="offense_<%= path %>">
         <summary class="accordition-header card-header bg-gray text-bold">
           <%= path %>
           <span class="chip">
@@ -75,7 +79,7 @@
           <% offenses.each do |offense| %>
             <div class="report">
               <div class="meta text-italic">
-                <span class="copy-btn tooltip"
+                <span class="copy-btn tooltip tooltip-right"
                       data-tooltip="Copy relative path"
                       data-clipboard-text="<%= path %>:<%= offense.line.new_lineno %>">
                   <a>Line #<%= offense.line.new_lineno %></a>
